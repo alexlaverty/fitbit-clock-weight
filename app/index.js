@@ -1,6 +1,7 @@
 import clock from "clock";
 import * as document from "document";
 import { preferences } from "user-settings";
+import { user } from "user-profile";
 
 function zeroPad(i) {
   if (i < 10) {
@@ -27,5 +28,7 @@ clock.ontick = (evt) => {
     hours = zeroPad(hours);
   }
   let mins = zeroPad(today.getMinutes());
-  myLabel.text = `${hours}:${mins}`;
+  // myLabel.text = `${hours}:${mins} ${user.restingHeartRate}`;
+  console.log(user)
+  myLabel.text = `${user.weight}`;
 }
